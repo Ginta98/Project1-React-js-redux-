@@ -1,0 +1,53 @@
+{
+  "name": "foodproject",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "ckeditor": "^4.9.2",
+    "css-loader": "^0.28.11",
+    "node-sass-chokidar": "^1.3.3",
+    "npm-run-all": "^4.1.3",
+    "react-image-resizer": "1.3.0",
+    "style-loader": "^0.21.0",
+    "cross-env": "^5.2.0"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "google-map-react": "^1.0.9",
+    "json-server": "^0.14.2",
+    "node-sass": "^4.13.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.0.4",
+    "redux": "^4.0.0",
+    "redux-logger": "^3.0.6",
+    "redux-saga": "^0.16.1",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.83.0"
+  },
+  "scripts": {
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build": "react-scripts build",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "sync-dev": "scp -rv ./build/* townweb:/opt/apps/webapp-dev/",
+    "deploy-dev": "cross-env REACT_APP_DEPLOY_ENV=development npm run build && npm run sync-dev",
+    "sync-prod": "scp -rv ./build/* townweb:/opt/apps/webapp-prod",
+    "deploy-prod": "cross-env REACT_APP_DEPLOY_ENV=production npm run build && npm run sync-prod"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
