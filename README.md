@@ -1,4 +1,4 @@
-## Dear teacher
+## Hello :D
    First, you need to download and install : node
    Node: https://nodejs.org/en/blog/release/v12.10.0/
    Then run these commands:
